@@ -47,7 +47,7 @@ public class CarController : MonoBehaviour
 
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
-            movement -= 0.009f;
+            movement -= 0.014f;
             if (movement < -1f)
                 movement = -1f;
         }
