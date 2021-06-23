@@ -18,20 +18,20 @@ public class CarController : MonoBehaviour
     public bool finish = false;
 
     public TerrainGenerator terrainGenerator;
-    public void Wait()
+    private void Wait()
     {
         Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
         rigidbody2D.gravityScale = 1f;
         backTire.GetComponent<Rigidbody2D>().gravityScale = 1f;
         frontTire.GetComponent<Rigidbody2D>().gravityScale = 1f;
     }
-    public void DoABarrelRoll()
+    private void DoABarrelRoll()
     {
         Vector3 eulerRotation = transform.rotation.eulerAngles;
         transform.rotation = Quaternion.Euler(eulerRotation.x, eulerRotation.y, 0);
     }
 
-    public void OnEnable()
+    private void OnEnable()
     {
         Time.timeScale = 1f;
         Invoke("Wait", 2f);
